@@ -1,0 +1,52 @@
+.paginator-container {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 20px 12px;
+
+  .paging-input-container button {
+    background: transparent;
+    text-align: center;
+    padding: 3px 9px;
+    display: flex;
+    border: 1px solid #e2e2ea;
+    border-radius: 3px;
+    color: #6c757d;
+    font-weight: 600;
+  }
+
+  input.paging-input {
+    width: auto;
+    max-width: 50px;
+    text-align: center !important;
+  }
+
+  .disapled {
+    pointer-events: none;
+  }
+
+  .pages-details{
+    padding-inline-end: 10px;
+  }
+
+  .first {
+    transform: rotate(90deg);
+  }
+
+  .last {
+    transform: rotate(270deg);
+  }
+}
+
+.spinner-container, .no-data {
+  text-align: center;
+  height: 100vh;
+  padding-top: 280px;
+
+    .spinner-border{
+      width: 100px;
+      height: 100px;
+    }
+}

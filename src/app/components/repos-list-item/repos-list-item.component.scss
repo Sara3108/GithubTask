@@ -1,0 +1,31 @@
+.repo-card{
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 7px;
+    padding: 15px;
+    margin: 20px;
+    color: #4b4e51;
+
+    .avatar {
+        img {
+            width: 120px;
+        }
+    } 
+
+    .details {
+        padding: 0 10px;
+
+        .count{
+            border: 1px solid rgba(0,0,0,.125);
+            border-radius: 3px;
+            margin: 5px;
+            padding: 6px;
+        }
+
+        p{
+            margin: 5px;
+            padding: 6px;
+        }
+    }
+}

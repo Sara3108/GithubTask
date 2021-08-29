@@ -1,0 +1,17 @@
+<div class="repo-card d-flex">
+  <div class="avatar">
+    <img [src]="repoItem?.owner?.avatar_url" alt="avatar" />
+  </div>
+
+  <div class="details">
+    <h3>{{ repoItem.name }}</h3>
+    <p>{{ repoItem.description }}</p>
+
+    <div class="d-flex">
+      <div class="count">Stars: {{ repoItem.stargazers_count }}</div>
+
+      <div class="count">Issues: {{ repoItem.open_issues_count }}</div>
+      <p>Submitted 30 days ago by {{ repoItem.owner.login }}</p>
+    </div>
+  </div>
+</div>

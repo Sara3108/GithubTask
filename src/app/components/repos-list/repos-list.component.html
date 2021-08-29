@@ -1,0 +1,67 @@
+<ng-container  *ngIf="!isLoading; else loading">
+   <ng-container  *ngIf="repos && repos.items?.length !== 0 ; else noData">
+    <div class="container">
+        <div class="item" *ngFor="let item of repos.items">
+          <app-repos-list-item [repoItem]="item"></app-repos-list-item>
+        </div>
+    </div>
+  <div class="paginator-container">
+    <div class="d-flex justify-content-right paging-input-container mt-4">
+      <div
+        class="d-flex align-items-center justify-content-center mr-3 ml-2 input-wrapper"
+      >
+        <span> {{ repos.items?.length }} Items </span>
+      </div>
+    </div>
+  
+    <div class="d-flex justify-content-right paging-input-container mt-4">
+      <button
+        class="first"
+        [class.disapled]="pageNum <= 1"
+        (click)="goToPreviousPage()"
+        title="Previous"
+      >
+      &#8744;
+      </button>
+      <div
+        class="d-flex align-items-center justify-content-center mr-3 ml-2 input-wrapper"
+      >
+        <input
+          class="app-input mx-2 paging-input"
+          [value]="pageNum"
+          (change)="getPageByNumber($event)"
+          type="number"
+        />
+        <span class="pages-details">
+          of {{ totalPagesCount }}
+          Pages
+        </span>
+      </div>
+      <button
+        class="last"
+        (click)="goToNextPage()"
+        [class.disapled]="pageNum >= totalPagesCount"
+        title="Next"
+      >
+      &#8744;
+      </button>
+    </div>
+  </div>
+   </ng-container>
+
+   <ng-template #noData>
+    <div class="no-data">
+      There are no data to display
+    </div>
+  </ng-template>
+</ng-container>
+
+
+<ng-template #loading>
+  <div class="spinner-container">
+    <div class="spinner-border text-secondary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</ng-template>
+
